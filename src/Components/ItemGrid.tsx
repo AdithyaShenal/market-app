@@ -25,7 +25,10 @@ const ItemGrid = ({ onAddItem }: Props) => {
         <Heading size="lg" mb="10px">
           Household
         </Heading>
-        <SimpleGrid columns={{ sm: 2, md: 3, lg: 4, xl: 6 }} spacing="20px">
+        <SimpleGrid
+          columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 6 }}
+          spacing="20px"
+        >
           {groceryArray.map((itemObject) => (
             <ItemCard onAdd={onAddItem} key={itemObject.id} item={itemObject} />
           ))}

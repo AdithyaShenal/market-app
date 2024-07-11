@@ -37,13 +37,17 @@ const CartIcon = ({ itemCount, selectedItems }: Props) => {
         </HStack>
       </Tooltip>
 
-      <Drawer onClose={onClose} isOpen={isOpen} size={{ lg: "xl", sm: "xs" }}>
+      <Drawer
+        onClose={onClose}
+        isOpen={isOpen}
+        size={{ base: "xs", md: "lg", lg: "xl" }}
+      >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader borderBottomWidth="1px">Item Cart</DrawerHeader>
           <DrawerBody>
             <TableContainer>
-              <Table variant="simple">
+              <Table variant="simple" size={{ base: "xs", md: "md", lg: "md" }}>
                 <TableCaption>
                   Imperial to metric conversion factors
                 </TableCaption>

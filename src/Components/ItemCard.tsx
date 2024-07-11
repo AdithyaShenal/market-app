@@ -1,19 +1,50 @@
-import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  Heading,
+  HStack,
+  Image,
+  Text,
+  Button,
+  Stack,
+  Divider,
+} from "@chakra-ui/react";
 
-interface ItemCardProps {
+export interface ItemProps {
+  id: number;
   name: string;
   price: number;
   image: string;
 }
 
-const ItemCard = ({ name, price, image }: ItemCardProps) => {
+interface ItemCardProps {
+  item: ItemProps;
+  onAdd: (data: ItemProps) => void;
+}
+
+const ItemCard = ({ item, onAdd }: ItemCardProps) => {
   return (
     <>
       <Card overflow="hidden">
-        <Image src={image} />
+        <Image src={item.image} />
         <CardBody padding="10px">
-          <Heading size="md">{name}</Heading>
-          <Text>Rs {price.toFixed(2)}</Text>
+          <HStack justify="space-between" align="start">
+            <Stack>
+              <Heading size="md">{item.name}</Heading>
+              <Text>Rs {item.price.toFixed(2)}</Text>
+            </Stack>
+            <Button
+              boxShadow="base"
+              colorScheme="blue"
+              size="sm"
+              mt="5px"
+              onClick={() => onAdd(item)}
+            >
+              Add to Cart
+            </Button>
+          </HStack>
+          <Divider />
+          <Text>Lorem ipsum dolor sit amet.</Text>
         </CardBody>
       </Card>
     </>

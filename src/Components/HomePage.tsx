@@ -1,16 +1,24 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import ItemGrid from "./ItemGrid";
+import { useState } from "react";
+import { ItemProps } from "./ItemCard";
 
 const HomePage = () => {
+  const [cartItems, setCartItems] = useState<ItemProps[]>([]);
+
+  const onAddItem = (data: ItemProps) => {
+    setCartItems([...cartItems, data]);
+  };
+
   return (
     <>
       <Grid templateAreas={{ base: `"nav" "main"` }}>
         <GridItem area="nav">
-          <NavBar />
+          <NavBar itemCount={cartItems.length} />
         </GridItem>
         <GridItem area={"main"}>
-          <ItemGrid />
+          <ItemGrid onAddItem={onAddItem} />
         </GridItem>
       </Grid>
     </>

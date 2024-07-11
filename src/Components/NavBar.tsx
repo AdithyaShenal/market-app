@@ -10,27 +10,46 @@ import {
   Tab,
   TabList,
   Tabs,
-  Icon,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import logo from "../assets/logo.webp";
-import { BsCart2 } from "react-icons/bs";
+import market_logo from "../assets/logo.svg";
+import CartIcon from "./CartIcon";
 
-const NavBar = () => {
+interface Props {
+  itemCount: number;
+}
+
+const NavBar = ({ itemCount }: Props) => {
   return (
     <>
       <Show above="md">
         <HStack justifyContent="space-between" padding="20px">
-          <Image src={logo} boxSize="64px" />
+          <Image src={market_logo} width="200px" height="90px" />
           <Tabs size="md" variant="unstyled" colorScheme="blue" align="end">
             <TabList>
               <HStack spacing="20px">
-                <Tab _hover={{ color: "white", bg: "blue.500" }}>Home</Tab>
-                <Tab _hover={{ color: "white", bg: "blue.500" }}>About Us</Tab>
-                <Tab _hover={{ color: "white", bg: "blue.500" }}>
+                <CartIcon itemCount={itemCount} />
+                <Tab
+                  borderRadius="5"
+                  boxShadow="base"
+                  _hover={{ color: "white", bg: "blue.500" }}
+                >
+                  Home
+                </Tab>
+                <Tab
+                  borderRadius="5"
+                  boxShadow="base"
+                  _hover={{ color: "white", bg: "blue.500" }}
+                >
+                  About Us
+                </Tab>
+                <Tab
+                  borderRadius="5"
+                  boxShadow="base"
+                  _hover={{ color: "white", bg: "blue.500" }}
+                >
                   Contact Us
                 </Tab>
-                <BsCart2 size="32px" />
               </HStack>
             </TabList>
           </Tabs>
@@ -40,9 +59,9 @@ const NavBar = () => {
       <Show breakpoint="(max-width: 767px)">
         <HStack justifyContent="space-between" padding="10px">
           {" "}
-          <Image src={logo} boxSize="55px" />
+          <Image src={market_logo} boxSize="100px" />
           <HStack spacing="20px">
-            <BsCart2 size="32px" />
+            <CartIcon itemCount={itemCount} />
             <Menu>
               <MenuButton
                 as={IconButton}

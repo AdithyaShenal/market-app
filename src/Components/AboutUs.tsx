@@ -1,9 +1,7 @@
 import {
   Box,
-  Button,
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   Container,
   Grid,
@@ -11,7 +9,6 @@ import {
   Heading,
   HStack,
   Image,
-  Show,
   Stack,
   StackDivider,
   Text,

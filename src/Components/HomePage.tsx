@@ -15,7 +15,7 @@ const HomePage = () => {
     <>
       <Grid templateAreas={{ base: `"nav" "main"` }}>
         <GridItem area="nav">
-          <NavBar itemCount={cartItems.length} />
+          <NavBar itemCount={cartItems.length} selectedItems={cartItems} />
         </GridItem>
         <GridItem area={"main"}>
           <ItemGrid onAddItem={onAddItem} />

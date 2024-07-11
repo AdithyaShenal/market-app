@@ -15,6 +15,7 @@ export interface ItemProps {
   name: string;
   price: number;
   image: string;
+  description: string;
 }
 
 interface ItemCardProps {
@@ -44,7 +45,7 @@ const ItemCard = ({ item, onAdd }: ItemCardProps) => {
             </Button>
           </HStack>
           <Divider />
-          <Text>Lorem ipsum dolor sit amet.</Text>
+          <Text>{item.description}</Text>
         </CardBody>
       </Card>
     </>

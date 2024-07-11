@@ -14,12 +14,14 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import market_logo from "../assets/logo.svg";
 import CartIcon from "./CartIcon";
+import { ItemProps } from "./ItemCard";
 
 interface Props {
   itemCount: number;
+  selectedItems: ItemProps[];
 }
 
-const NavBar = ({ itemCount }: Props) => {
+const NavBar = ({ itemCount, selectedItems }: Props) => {
   return (
     <>
       <Show above="md">
@@ -28,7 +30,7 @@ const NavBar = ({ itemCount }: Props) => {
           <Tabs size="md" variant="unstyled" colorScheme="blue" align="end">
             <TabList>
               <HStack spacing="20px">
-                <CartIcon itemCount={itemCount} />
+                <CartIcon itemCount={itemCount} selectedItems={selectedItems} />
                 <Tab
                   borderRadius="5"
                   boxShadow="base"
@@ -61,7 +63,7 @@ const NavBar = ({ itemCount }: Props) => {
           {" "}
           <Image src={market_logo} boxSize="100px" />
           <HStack spacing="20px">
-            <CartIcon itemCount={itemCount} />
+            <CartIcon itemCount={itemCount} selectedItems={selectedItems} />
             <Menu>
               <MenuButton
                 as={IconButton}

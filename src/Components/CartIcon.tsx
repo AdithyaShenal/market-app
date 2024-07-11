@@ -15,6 +15,8 @@ import {
   Tr,
   Th,
   TableContainer,
+  Tbody,
+  Td,
 } from "@chakra-ui/react";
 import { ItemProps } from "./ItemCard";
 
@@ -52,6 +54,11 @@ const CartIcon = ({ itemCount, selectedItems }: Props) => {
                     <Th isNumeric>multiply by</Th>
                   </Tr>
                 </Thead>
+                <Tbody>
+                  {selectedItems.map((item) => (
+                    <Td>{item.name}</Td>
+                  ))}
+                </Tbody>
               </Table>
             </TableContainer>
           </DrawerBody>

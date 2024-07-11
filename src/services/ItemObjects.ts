@@ -1,4 +1,4 @@
-import image from "../assets/image.jpg";
+// import image from "../assets/image.jpg";
 import dhal from "../assets/dhal.jpg";
 import rice from "../assets/rice_bag.jpeg";
 

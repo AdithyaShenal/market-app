@@ -26,7 +26,7 @@ const ItemGrid = ({ onAddItem }: Props) => {
           Household
         </Heading>
         <SimpleGrid
-          columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 6 }}
+          columns={{ base: 2, sm: 2, md: 3, lg: 4, xl: 6 }}
           spacing="20px"
         >
           {groceryArray.map((itemObject) => (

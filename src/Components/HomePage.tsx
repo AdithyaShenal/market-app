@@ -11,11 +11,19 @@ const HomePage = () => {
     setCartItems([...cartItems, data]);
   };
 
+  const onRemoveItem = (id: number) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
+
   return (
     <>
       <Grid templateAreas={{ base: `"nav" "main"` }}>
         <GridItem area="nav">
-          <NavBar itemCount={cartItems.length} selectedItems={cartItems} />
+          <NavBar
+            itemCount={cartItems.length}
+            selectedItems={cartItems}
+            onRemoveItem={onRemoveItem}
+          />
         </GridItem>
         <GridItem area={"main"}>
           <ItemGrid onAddItem={onAddItem} />

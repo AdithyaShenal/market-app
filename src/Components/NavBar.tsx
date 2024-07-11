@@ -19,9 +19,10 @@ import { ItemProps } from "./ItemCard";
 interface Props {
   itemCount: number;
   selectedItems: ItemProps[];
+  onRemoveItem: (data: number) => void;
 }
 
-const NavBar = ({ itemCount, selectedItems }: Props) => {
+const NavBar = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
   return (
     <>
       <Show above="md">
@@ -30,7 +31,11 @@ const NavBar = ({ itemCount, selectedItems }: Props) => {
           <Tabs size="md" variant="unstyled" colorScheme="blue" align="end">
             <TabList>
               <HStack spacing="20px">
-                <CartIcon itemCount={itemCount} selectedItems={selectedItems} />
+                <CartIcon
+                  itemCount={itemCount}
+                  selectedItems={selectedItems}
+                  onRemoveItem={onRemoveItem}
+                />
                 <Tab
                   borderRadius="5"
                   boxShadow="base"
@@ -63,7 +68,11 @@ const NavBar = ({ itemCount, selectedItems }: Props) => {
           {" "}
           <Image src={market_logo} boxSize="100px" />
           <HStack spacing="20px">
-            <CartIcon itemCount={itemCount} selectedItems={selectedItems} />
+            <CartIcon
+              itemCount={itemCount}
+              selectedItems={selectedItems}
+              onRemoveItem={onRemoveItem}
+            />
             <Menu>
               <MenuButton
                 as={IconButton}

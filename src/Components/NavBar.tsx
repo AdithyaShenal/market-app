@@ -15,6 +15,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import market_logo from "../assets/logo.svg";
 import CartIcon from "./CartIcon";
 import { ItemProps } from "./ItemCard";
+import { Link } from "react-router-dom";
 
 interface Props {
   itemCount: number;
@@ -41,21 +42,21 @@ const NavBar = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
                   boxShadow="base"
                   _hover={{ color: "white", bg: "blue.500" }}
                 >
-                  Home
+                  <Link to={"/"}>Home</Link>
                 </Tab>
                 <Tab
                   borderRadius="5"
                   boxShadow="base"
                   _hover={{ color: "white", bg: "blue.500" }}
                 >
-                  About Us
+                  <Link to={"./about"}>About Us</Link>
                 </Tab>
                 <Tab
                   borderRadius="5"
                   boxShadow="base"
                   _hover={{ color: "white", bg: "blue.500" }}
                 >
-                  Contact Us
+                  <Link to={"./contact"}>Contact Us</Link>
                 </Tab>
               </HStack>
             </TabList>
@@ -81,9 +82,15 @@ const NavBar = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
                 variant="outline"
               />
               <MenuList>
-                <MenuItem>Home</MenuItem>
-                <MenuItem>About Us</MenuItem>
-                <MenuItem>Contact Us</MenuItem>
+                <MenuItem>
+                  <Link to={"/"}>Home</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"./about"}></Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"./contact"}>Contact Us</Link>
+                </MenuItem>
               </MenuList>
             </Menu>
           </HStack>

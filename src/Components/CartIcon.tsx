@@ -56,7 +56,7 @@ const CartIcon = ({ itemCount, selectedItems }: Props) => {
                 </Thead>
                 <Tbody>
                   {selectedItems.map((item) => (
-                    <Td>{item.name}</Td>
+                    <Td key={item.id}>{item.name}</Td>
                   ))}
                 </Tbody>
               </Table>

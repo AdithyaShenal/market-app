@@ -37,7 +37,7 @@ const CartIcon = ({ itemCount, selectedItems }: Props) => {
         </HStack>
       </Tooltip>
 
-      <Drawer onClose={onClose} isOpen={isOpen} size="md">
+      <Drawer onClose={onClose} isOpen={isOpen} size={{ lg: "xl", sm: "xs" }}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader borderBottomWidth="1px">Item Cart</DrawerHeader>

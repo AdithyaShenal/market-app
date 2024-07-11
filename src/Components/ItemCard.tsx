@@ -26,7 +26,7 @@ const ItemCard = ({ item, onAdd }: ItemCardProps) => {
   return (
     <>
       <Card overflow="hidden">
-        <Image src={item.image} />
+        <Image src={item.image} boxSize="" />
         <CardBody padding="10px">
           <HStack justify="space-between" align="start">
             <Stack>

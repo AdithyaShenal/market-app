@@ -9,7 +9,6 @@ import {
   Input,
   FormHelperText,
   Textarea,
-  Button,
 } from "@chakra-ui/react";
 
 export const ContactPage = () => (

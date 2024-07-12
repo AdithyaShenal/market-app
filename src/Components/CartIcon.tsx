@@ -26,15 +26,27 @@ interface Props {
   itemCount: number;
   selectedItems: ItemProps[];
   onRemoveItem: (id: number) => void;
+  onClear: () => void;
 }
 
-const CartIcon = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
+const CartIcon = ({
+  itemCount,
+  selectedItems,
+  onRemoveItem,
+  onClear,
+}: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
       <Tooltip hasArrow label="Check item cart" bg="blue.200" closeDelay={500}>
-        <HStack onClick={onOpen} padding="5px" borderRadius={5}>
+        <HStack
+          onClick={onOpen}
+          padding="5px"
+          borderRadius={5}
+          border="1px"
+          borderColor="blue.100"
+        >
           <BsCart2 size="28px" />
           <Tag colorScheme="blue">{itemCount}</Tag>
         </HStack>
@@ -90,6 +102,14 @@ const CartIcon = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
                 </Tfoot>
               </Table>
             </TableContainer>
+            <HStack spacing="10px">
+              <Button size="sm" colorScheme="blue">
+                Chekout
+              </Button>
+              <Button size="sm" colorScheme="red" onClick={onClear}>
+                Clear Cart
+              </Button>
+            </HStack>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

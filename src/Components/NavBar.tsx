@@ -21,9 +21,10 @@ interface Props {
   itemCount: number;
   selectedItems: ItemProps[];
   onRemoveItem: (data: number) => void;
+  onClear: () => void;
 }
 
-const NavBar = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
+const NavBar = ({ itemCount, selectedItems, onRemoveItem, onClear }: Props) => {
   return (
     <>
       <Show above="md">
@@ -33,6 +34,7 @@ const NavBar = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
             <TabList>
               <HStack spacing="20px">
                 <CartIcon
+                  onClear={onClear}
                   itemCount={itemCount}
                   selectedItems={selectedItems}
                   onRemoveItem={onRemoveItem}
@@ -70,6 +72,7 @@ const NavBar = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
           <Image src={market_logo} boxSize="100px" />
           <HStack spacing="20px">
             <CartIcon
+              onClear={onClear}
               itemCount={itemCount}
               selectedItems={selectedItems}
               onRemoveItem={onRemoveItem}

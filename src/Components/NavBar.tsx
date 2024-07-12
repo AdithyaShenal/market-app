@@ -86,7 +86,7 @@ const NavBar = ({ itemCount, selectedItems, onRemoveItem }: Props) => {
                   <Link to={"/"}>Home</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link to={"./about"}></Link>
+                  <Link to={"./about"}>About Us</Link>
                 </MenuItem>
                 <MenuItem>
                   <Link to={"./contact"}>Contact Us</Link>

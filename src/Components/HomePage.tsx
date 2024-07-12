@@ -4,9 +4,12 @@ import ItemGrid from "./ItemGrid";
 import { useState } from "react";
 import { ItemProps } from "./ItemCard";
 import ItemFilter from "./ItemFilter";
+import itemsArray from "../services/items";
 
 const HomePage = () => {
   const [cartItems, setCartItems] = useState<ItemProps[]>([]);
+
+  const [items, setItems] = useState<ItemProps[]>(itemsArray);
 
   const onAddItem = (data: ItemProps) => {
     setCartItems([...cartItems, data]);
@@ -19,11 +22,6 @@ const HomePage = () => {
   const OnClearCart = () => {
     setCartItems([]);
   };
-
-  const onSubmit = (data: { category: string }) => {
-    console.log(data);
-  };
-
   return (
     <>
       <Grid templateAreas={{ base: `"nav" "filter" "main"` }}>
@@ -36,9 +34,7 @@ const HomePage = () => {
           />
         </GridItem>
 
-        <GridItem area={"filter"}>
-          <ItemFilter onSubmit={onSubmit} />
-        </GridItem>
+        <GridItem area={"filter"}></GridItem>
 
         <GridItem area={"main"}>
           <ItemGrid onAddItem={onAddItem} />

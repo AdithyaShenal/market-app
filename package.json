@@ -23,6 +23,7 @@
     "zod": "^3.20.6"
   },
   "devDependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",

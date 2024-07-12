@@ -15,7 +15,7 @@ export const groceryArray = [
     name: "Sugar",
     price: 425.0,
     image: sugar,
-    description: "1Kg White sugar",
+    description: "1Kg Packet",
   },
   {
     id: 1001,
